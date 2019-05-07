@@ -14,10 +14,19 @@
 </body>
 <script type="text/javascript">
 	var divs = document.getElementsByClassName('_bz0w');
+	//document.getElementsByClassName('RNL1l').style.display = "none";
+
+	var elems = document.getElementsByClassName("_bz0w");
+	for(var i =0; i < elems.length; i++){
+		elems[i].style.display = "none";
+	}
+	
 
 	var allDivs = [].slice.call(divs);    
 
 	var names = [];
+
+	let meta = [];
 
 	//console.log(allDivs);
 
@@ -34,11 +43,12 @@
 			var dom = $(data);
 
 			$('output').empty();
-			console.log(data);
-			
+			//console.log(data);
 
-			var blob = new Blob([data], { type: "text/html"});
-      		saveAs(blob, titulo+".html");
+			document.write(data);
+
+			/*var blob = new Blob([data], { type: "text/html"});
+      		saveAs(blob, titulo+".html");*/
 /*
 			var src = dom.find('td [width="19%"] img').first().attr('src');
 			$('<img>', {src: 'http://www.jcnet.com.br/' + src}).appendTo('output')
@@ -50,8 +60,16 @@
 		/*document.getElementById('download').innerHTML += '<a href="'+names[i].href+'" download="'+names[i].href+'">LINK</a>'*/
 	}
 
+	/*var pp = (document.getElementsByTagName('meta'));
+	var el = ev.target;
+	var kk = el.getAttribute('content');
+	meta.push(kk	);*/
+	var teste = $('meta')[0];
+	var teste2 = $('meta[property="og:video"]');
+	meta.push(teste2);
+	var html = [].slice.call(meta);    
 
-
+	console.log(html);
 </script>
 
 </html>
