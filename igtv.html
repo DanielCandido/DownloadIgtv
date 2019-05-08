@@ -66,8 +66,10 @@
 		}
 
 		var page = document.getElementsByTagName('html');
+		var body = document.getElementsByTagName('body');
 		for(let i = 0; i < page.length; i++){
 			page[i].style.height = '100%';
+			body[i].style.height = '100%';
 		}
 
 
@@ -86,33 +88,32 @@
 
 		//console.log(html);
 		for(let i =0; i < html.length; i++){
-			attr.push({nome: html[i].content},);
+			attr.push(html[i].content);
 		}
 
 
 		console.log(attr);
-		/*for (var i = 0; i < attr.length; i++) {
-			var url = []; 
-			url.push(encodeURI(attr[i].nome));
-			console.log(url[i]);
-			console.log(encodeURI(attr[i].nome));
-			
-		}*/
+		//this.passaValor(valor);
+		var vid = "https://instagram.fbfh3-2.fna.fbcdn.net/vp/f6a25595111f6ea39e0637708fa38581/5CD5241E/t50.16885-16/10000000_598371957282526_4842126699078352896_n.mp4?_nc_ht=instagram.fbfh3-2.fna.fbcdn.net";
+		this.baixaVideo(vid);
 	}
 
-	function baixaVideo(){
+	function baixaVideo(url){
 		$.ajax({
-			    type: "POST",
+			    type: "GET",
 			    url: "download.php",
-			    data: {nome:"https://instagram.fbfh3-2.fna.fbcdn.net/vp/1367d9ae35d12666412419b919831857/5CD4B799/t50.16885-16/10000000_2082967508424783_7305260670621057024_n.mp4?_nc_ht=instagram.fbfh3-2.fna.fbcdn.net"},
+			    data: {arquivo: url},
 			    success: function(dados){
-			       console.log('sucesso');
+			       console.log(dados);
 		    	}
 			});
-	}
-		
+	}	
 
-		setTimeout(this.pegaUrl, 3000);
+		setTimeout(this.pegaUrl, 4000);
 		setTimeout(this.arrumaHtml, 3000);
+
 </script>
+<footer>
+	
+</footer>
 </html>
