@@ -101,7 +101,7 @@
 
 		//console.log(html);
 		for(let i =0; i < html.length; i++){
-			this.attr.push({url : html[i].content, nome : title[i].content+'.mp4'},);
+			this.attr.push({url : html[i].content, nome : title[i].content+'.mp3'},);
 		}
 
 		for(let i = 0; i < this.attr.length; i++){
